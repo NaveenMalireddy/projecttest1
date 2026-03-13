@@ -1,64 +1,99 @@
 <mvc:View
     controllerName="com.app.testproject.controller.Home"
-   	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:l="sap.ui.layout"
-	xmlns:f="sap.ui.layout.form"
+   		xmlns:mvc="sap.ui.core.mvc"
 	xmlns:core="sap.ui.core"
-	xmlns="sap.m" 
+	xmlns:p="sap.m.plugins"
+	xmlns="sap.m"
 >
 	
+ <!-- <f:SimpleForm
+        id="SimpleFormChange354"
+        editable="true"
+        layout="ResponsiveGridLayout"
+        title="Address"
+        labelSpanXL="3"
+        labelSpanL="3"
+        labelSpanM="3"
+        labelSpanS="12"
+        adjustLabelSpan="false"
+        emptySpanXL="4"
+        emptySpanL="4"
+        emptySpanM="4"
+        emptySpanS="0"
+        columnsXL="1"
+        columnsL="1"
+        columnsM="1"
+        singleContainerFullSize="false"
+    >
+        <Label text="Employee Name"></Label>
+		<Input  value="{/person/EmployeeName}"></Input>
+		<Label text="Employee Age"></Label>
+		<Input value="{/person/EmployeeAge}"></Input>
+        <Label  text="Email"/>
+        <Input value="{/person/Email}"/>
+        <VBox >
+           <Button text="Calculate Age" /> 
+        </VBox>
+    </f:SimpleForm>
+    -->
 
-    <l:VerticalLayout id="_IDGenVerticalLayout">
-        <Label
-            id="id_Fname"
-            text="First Name"
-            required="true"
-        />
-        <Input id="_IDGenInput1" type="Text" />
-        <Label id="_IDGenLabel"
-            text="Last Name"
-            required="true"
-        />
-        <Input id="_IDGenInput2" type="Text" />
-        <Label id="_IDGenLabel1"
-            text="Mobile No"
-            required="true"
-        />
-        <Input id="_IDGenInput3" type="Number" />
-
-        <Label id="_IDGenLabel2" text="Gmail" />
-        <Input id="_IDGenInput4" type="Email" />
-        <HBox id="_IDGenHBox">
-            <Button
-                id="id_button1"
-                text="Submit"
-                type="Success"
-                icon="sap-icon://accept"
-
-            >
-            	<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-                    </Button>
-            <Button
-                id="id_button2"
-                text="Cancel"
-                type="Reject"
-            >
-			<layoutData>
-						<FlexItemData growFactor="1" />
-					</layoutData>
-                    </Button>
-					 <Button
-                id="id_button4"
-                text="Refresh"
-                type="Default"
-				press="onRefresh"
-            />
+	<Table id="idProductsTable"
+		inset="false"
+		items="{
+			path: '/employee',
+			sorter: {
+				path: 'Name'
+			}
+		}">
+		
+		<infoToolbar>
+			<OverflowToolbar>
+				<Label text="Wide range of available products"/>
+			</OverflowToolbar>
+		</infoToolbar>
+		<columns>
+			<Column
+				width="12em">
+				<Text text="First Name" />
+				<dependents>
+					<p:ColumnAIAction press="onAIActionPress"></p:ColumnAIAction>
+				</dependents>
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Second Name" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<Text text="Age" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				>
+				<Text text="gender" />
+			</Column>
 			
-        </HBox>
-    </l:VerticalLayout>
- 
-
+		</columns>
+		<items>
+			<ColumnListItem vAlign="Middle">
+				<cells>
+					
+					<Text
+						text="{fName}" />
+					<Text
+						text="{lName}" />
+                        <Text
+						text="{age}" />
+                        
+					<Text
+						text="{gender}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
 
 </mvc:View>

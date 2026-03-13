@@ -7,19 +7,19 @@ sap.ui.define([
         onInit() {
             console.log("onInit")
         },
-        onBeforeRendering: function () {
-            console.log("Before rendering");
-            console.log(document.getElementById("_IDGenInput1"));
-        },
-        onAfterRendering: function () {
-            console.log("After rendering");
-            this.byId("_IDGenInput1").focus();
-            console.log(document.getElementById("_IDGenInput1"));
+        // onBeforeRendering: function () {
+        //     console.log("Before rendering");
+        //     console.log(document.getElementById("_IDGenInput1"));
+        // },
+        // onAfterRendering: function () {
+        //     console.log("After rendering");
+        //     this.byId("_IDGenInput1").focus();
+        //     console.log(document.getElementById("_IDGenInput1"));
 
-        },
-        onRefresh: function () {
-            this.getView().rerender();
-        }
+        // },
+        // onRefresh: function () {
+        //     this.getView().rerender();
+        // }
 
     });
 });
