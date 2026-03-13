@@ -1,0 +1,64 @@
+<mvc:View
+    controllerName="com.app.testproject.controller.Home"
+   	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m" 
+>
+	
+
+    <l:VerticalLayout id="_IDGenVerticalLayout">
+        <Label
+            id="id_Fname"
+            text="First Name"
+            required="true"
+        />
+        <Input id="_IDGenInput1" type="Text" />
+        <Label id="_IDGenLabel"
+            text="Last Name"
+            required="true"
+        />
+        <Input id="_IDGenInput2" type="Text" />
+        <Label id="_IDGenLabel1"
+            text="Mobile No"
+            required="true"
+        />
+        <Input id="_IDGenInput3" type="Number" />
+
+        <Label id="_IDGenLabel2" text="Gmail" />
+        <Input id="_IDGenInput4" type="Email" />
+        <HBox id="_IDGenHBox">
+            <Button
+                id="id_button1"
+                text="Submit"
+                type="Success"
+                icon="sap-icon://accept"
+
+            >
+            	<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+                    </Button>
+            <Button
+                id="id_button2"
+                text="Cancel"
+                type="Reject"
+            >
+			<layoutData>
+						<FlexItemData growFactor="1" />
+					</layoutData>
+                    </Button>
+					 <Button
+                id="id_button4"
+                text="Refresh"
+                type="Default"
+				press="onRefresh"
+            />
+			
+        </HBox>
+    </l:VerticalLayout>
+ 
+
+
+</mvc:View>
