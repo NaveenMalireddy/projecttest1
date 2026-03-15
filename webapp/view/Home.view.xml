@@ -4,6 +4,7 @@
 	xmlns:core="sap.ui.core"
 	xmlns:p="sap.m.plugins"
 	xmlns="sap.m"
+     xmlns:f="sap.ui.layout.form"
 >
 	
  <!-- <f:SimpleForm
@@ -24,40 +25,57 @@
         columnsL="1"
         columnsM="1"
         singleContainerFullSize="false"
+		objectBindings="{/person}"
     >
         <Label text="Employee Name"></Label>
-		<Input  value="{/person/EmployeeName}"></Input>
+		<Input  value="{EmployeeName}"></Input>
 		<Label text="Employee Age"></Label>
-		<Input value="{/person/EmployeeAge}"></Input>
+		<Input value="{EmployeeAge}"></Input>
         <Label  text="Email"/>
-        <Input value="{/person/Email}"/>
-        <VBox >
-           <Button text="Calculate Age" /> 
-        </VBox>
-    </f:SimpleForm>
-    -->
+        <Input visible="{= ${Email}? true : false}" value="{Email}"/>
+       
+    </f:SimpleForm> -->
+   
+<Page >
 
+        <content>
 	<Table id="idProductsTable"
 		inset="false"
+		mode="MultiSelect"
 		items="{
 			path: '/employee',
 			sorter: {
 				path: 'Name'
 			}
 		}">
-		
+			<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Employees" level="H2"/>
+					<ToolbarSpacer />
+
+					<Button text="Create" press="onCreate"></Button>
+					<Button text="Edit" press="onEdit"></Button>
+					<Button text="Delete" press="onDelete"></Button>
+					
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
 		<infoToolbar>
 			<OverflowToolbar>
-				<Label text="Wide range of available products"/>
+				<Label text="Employee Details"/>
 			</OverflowToolbar>
 		</infoToolbar>
 		<columns>
+		<Column
+				width="12em">
+				<Text text="ID" />
+				
+			</Column>
 			<Column
 				width="12em">
 				<Text text="First Name" />
-				<dependents>
-					<p:ColumnAIAction press="onAIActionPress"></p:ColumnAIAction>
-				</dependents>
+				
 			</Column>
 			<Column
 				minScreenWidth="Tablet"
@@ -79,8 +97,10 @@
 			
 		</columns>
 		<items>
-			<ColumnListItem vAlign="Middle">
+			<ColumnListItem vAlign="Middle"   type="Navigation" press="onEmployeePress" >
 				<cells>
+				<Text
+						text="{ID}" />
 					
 					<Text
 						text="{fName}" />
@@ -95,5 +115,8 @@
 			</ColumnListItem>
 		</items>
 	</Table>
+	 </content>
+
+    </Page>
 
 </mvc:View>

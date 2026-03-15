@@ -3,7 +3,7 @@
         "EmployeeName": "John Doe",
         "EmployeeAge": 40,
         "ContractStarted": "01-01-2024",
-        "Email": "john.doe@gmail.com"
+        "Email": "John@gmail.com"
     },
     "employee": [
         {

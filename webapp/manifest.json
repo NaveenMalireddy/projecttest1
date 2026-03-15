@@ -89,12 +89,23 @@
           "target": [
             "TargetHome"
           ]
+        },
+        {
+          "name": "EmployeeObject",
+          "pattern": "employee/{empId}",
+          "target": [
+            "EmployeeObject"
+          ]
         }
       ],
       "targets": {
         "TargetHome": {
           "id": "Home",
           "name": "Home"
+        },
+         "EmployeeObject": {
+          "id": "EmployeeObject",
+          "name": "EmployeeObject"
         }
       }
     },
